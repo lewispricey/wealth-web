@@ -4,9 +4,9 @@ import NavButton from "../molecules/NavButton";
 const NavBar = () => {
   return (
     <div>
-      <NavButton text="Add Transaction" />
-      <NavButton text="Manage Accounts" />
-      <NavButton text="View Reports" />
+      <NavButton type="add" />
+      <NavButton type="accounts" />
+      <NavButton type="reports" />
     </div>
   );
 };
