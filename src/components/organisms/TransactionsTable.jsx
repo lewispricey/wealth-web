@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import getTransactions from "../../hooks/getTransactions";
 
 const TransactionsTable = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    getTransactions().then((data) => {
+      setTransactions(data.transactions);
+    });
+  }, []);
+
   return (
     <div>
       <table>
@@ -12,14 +21,18 @@ const TransactionsTable = () => {
           <th>Type</th>
           <th>Amount</th>
         </tr>
-        <tr>
-          <td>Side Hustle</td>
-          <td>Salary</td>
-          <td>Current Account</td>
-          <td>2021-06-01</td>
-          <td>In</td>
-          <td>2000</td>
-        </tr>
+        {transactions.map((transaction, idx) => {
+          return (
+            <tr key={idx}>
+              <td>{transaction.description}</td>
+              <td>{transaction.category}</td>
+              <td>{transaction.account_name}</td>
+              <td>{transaction.date}</td>
+              <td>{transaction.type}</td>
+              <td>{transaction.amount}</td>
+            </tr>
+          );
+        })}
       </table>
     </div>
   );
