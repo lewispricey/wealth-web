@@ -1,12 +1,12 @@
 import React from "react";
 
-const AccountCard = () => {
+const AccountCard = ({ name, type, balance }) => {
   return (
-    <div>
-      <h3>Account Name</h3>
-      <p>Account Type</p>
-      <p>Current Balance</p>
-    </div>
+    <button>
+      <h3>{name}</h3>
+      <p>{type}</p>
+      <p>£{balance}</p>
+    </button>
   );
 };
 

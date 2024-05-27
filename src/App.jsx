@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import Title from "./components/atoms/Title";
-import AccountCard from "./components/molecules/AccountCard";
-import TransactionsTable from "./components/organisms/TransactionsTable";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <Title />
-      <AccountCard />
-      <TransactionsTable />
+      <Home />
     </>
   );
 }
